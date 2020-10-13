@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="main.css">
-    <title>Images</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <title>Cat Image DataBase</title>
+</head>
+<body>
 <form action="index.php" method="post">
 URL: <input type="text" name="url"><br>
 Cuteness: <input type="number" name="cuteness"><br>
 <input type="submit">
 </form>
 <?php
-echo exec("group");
 $url = "";
 $cute = 0;
 $posting = false;
@@ -96,24 +95,24 @@ function trimEnd($text)
 }
 
 
-?> 
+?>
  <div class="container">
       <div id="grid" class="grid">
 
-      </div>
+      </div></div>
 <script>
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-async function demo(){
+async function fillgrid(){
 for (var j = 0;j < imglst.length;j++)
 {
-	await sleep(100);
+  await sleep(100);
   var i = imglst.length - (j+1);
-  document.getElementById("grid").innerHTML += "<div class=\"img\"><img class=\"indicator\" src=\"selected.svg\"/><img src="+imglst[i].url+"><div class=\"opt\"><a>"+imglst[i].cute+"</a><br/></div></div>";
+  document.getElementById("grid").innerHTML += "<div class=\"img\"><img src="+imglst[i].url+"><div class=\"opt\"><span>Title</span><br/><span><a href='#'>↑</a>"+imglst[i].cute+"<a href='#'>↓</a><br/></span></div></div>";
   console.log(imglst[i].num);
 }}
-demo();
+fillgrid();
 </script>
 </body>
 </html>
