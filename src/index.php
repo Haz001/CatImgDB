@@ -8,7 +8,7 @@
 <body>
 <form action="index.php" method="post">
 URL: <input type="text" name="url"><br>
-Cuteness: <input type="number" name="cuteness"><br>
+Title: <input type="text" name="title"><br>
 <input type="submit">
 </form>
 <?php
@@ -17,8 +17,11 @@ $cute = 0;
 $posting = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$posting = true;
+	$uid = uniqid("cat");
 	$url = test_input($_POST["url"]);
-	$cute = test_input($_POST["cuteness"]);
+	$title = test_input($_POST["title"]);
+	$cute = 0;
+	$notcute = 0;
 }
 $servername = "localhost";
 $spwd = fopen("index.php.pwd", "r") or die("Cannot Connect To Database");
@@ -49,7 +52,7 @@ if($posting)
 		echo "<script>var result = \"URL already in DB\";</script>";
 	}else
 	{
-		$sql = "INSERT INTO catimg VALUES ('".$url."',".$cute.")";
+		$sql = "INSERT INTO catimg VALUES ('" .$uid. "','" .$url. "','" .$title. "'," .$cute. ",".$notcute.")";
 		if ($conn->query($sql) === TRUE)
 		{
 			echo "New record created successfully";
@@ -69,7 +72,7 @@ if ($result->num_rows > 0)
   // output data of each row
   echo "<script>\nimglst=[\n";
   while($row = $result->fetch_assoc()) {
-    echo "{url: \"".$row["url"]."\",cute: " . $row["cuteness"]."},\n";
+    echo "{url: \"".$row["url"]."\",title:\"".$row["title"]."\",cute: " . $row["cute"]."},\n";
   }
   echo "];</script>";
 }else
@@ -109,7 +112,7 @@ for (var j = 0;j < imglst.length;j++)
 {
   await sleep(100);
   var i = imglst.length - (j+1);
-  document.getElementById("grid").innerHTML += "<div class=\"img\"><img src="+imglst[i].url+"><div class=\"opt\"><span>Title</span><br/><span><a href='#'>↑</a>"+imglst[i].cute+"<a href='#'>↓</a><br/></span></div></div>";
+  document.getElementById("grid").innerHTML += "<div class=\"img\"><img src="+imglst[i].url+"><div class=\"opt\"><span>"+imglst[i].title+"</span><br/><span><a href='#'>↑</a>"+imglst[i].cute+"<a href='#'>↓</a><br/></span></div></div>";
   console.log(imglst[i].num);
 }}
 fillgrid();
