@@ -1,5 +1,13 @@
 # CatImgDB
-CatImgDB is the de-facto web database for collection and rating of cat images. It is written in HTML, CSS, PHP and mySQL.
+This is the source code repo for CatImgDB.  
+CatImgDB is a image collection and rating website, similar to [Reddit](https://reddit.com/), for the collection and rating of Cat Images. CatImgDB is made with `LAMP` (`Linux`,`Apache`,`MySQL`,`PHP`) and unreleased.
+
+## Why are you making this?
+- To learn  
+I've been wanting to learn `SQL` and `PHP` and making one big project is how I learn. I split it up into small parts and then
+- To
+
+
 
 ## What is this
 This is the code for a yet to be released website (due to security issues). This allows the collection and rating of images.
@@ -19,21 +27,36 @@ This is the code for a yet to be released website (due to security issues). This
 
 ## How to install
 1. login to your `SQL Manager` and add a new user
-2. Make a new database
+2. Make a new database, `[database]`
 3. Run the SQL in `sql.sql` in the new database
-4. Save the new users `username`, `password` and name of the new database in a file called  `index.php.pwd` with the format:
+4. Save the new users `[username]`, `[password]` in a file called  `pwd/[username].php` with the format:
 ```
-[username]
-[password
-[database]
+<?php
+$username = "[username]";
+$password = "[password]";
+?>
 ```
-5. Save `index.php.pwd` to the root directory of the web server
+5. Save `pwd/[username].php` to the root directory of the web server
 6. Copy `src/index.php` to the root directory of the web server
+7. Find line:
+```
+//Password database info
+require "pwd/haz.php";
+$dbname = "test";
+```
+and change it to
+```
+//Password database info
+require "pwd/[username].php";
+$dbname = "[database]";
+```
 7. Connect to it through [localhost](http://localhost/index.php)
+
 
 ## FAQ
 - Can this code be used for other pictures besides cats?  
-Technically yes, we have not yet added are [CatID AI](#catid) yet so there is nothing stopping this code being used to build another image site. 
+Technically yes, we have not yet added are [CatID AI](#catid) yet so there is nothing stopping this code being used to build another image site.  
+Officially **NO**. CatImgDB is only for cat images, it is in the title.
 - Where can i access this site?  
 Nowhere, unsettlingly this site is not yet public.
 - Why is this site not public yet? When will it be?  
@@ -43,10 +66,10 @@ We have no time frame for when it will be public.
 As I am doing this project to learn SQL I would really appreciate it if you would review my code for any bad practices and test it to find if there are any bugs.
 - How will this be financially viable?  
 Once are user-base is big enough we will introduce Cat-verts (cat advert), an advert with a cat in it that is also be rate-able, this will allow us to keep to our sole aim of collecting and rating all cat images in the world as the cat-vert will technically class-able as a cat image.
-- What makes this the de-facto web database for cat images?  
-It has a [plan](#todo)  
-It has been designed to be [much better than competitors](#whybetter)  
-Its main and only purpose is to be a `web database for cat images`
+- What makes this better than other cat image sharing websites?  
+It has a [plan](#todo).  
+It has been designed to be [much better than competitors](#whybetter).  
+Its main and only purpose is to be a `web database for cat images`.
 
 
 ## <span id="todo">To Do List</span>
@@ -84,10 +107,9 @@ Its main and only purpose is to be a `web database for cat images`
 
 ## Versions
 ### v0.1 [current]
-It can currently take a URL with a title and add it to a SQL database.
+It can currently take a URL with a title and add it to a SQL database.  
 It can then show that database as a grid of pictures with title at the bottom. Its title will expand and become more visible when the picture is hovered over.
 
 ## Screenshot
 ![Screenshot 1, v0.1](ss0.jpg)
 Current cat pictures are from [unsplash](https://Unsplash.com/).
-
