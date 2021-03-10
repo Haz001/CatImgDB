@@ -1,6 +1,6 @@
 # CatImgDB
 This is the source code repo for CatImgDB.  
-CatImgDB is a image collection and rating website, similar to [Reddit](https://reddit.com/), for the collection and rating of Cat Images. CatImgDB is made with `LAMP` (`Linux`,`Apache`,`MySQL`,`PHP`) and unreleased.
+CatImgDB is a image collection and rating website, similar to [Reddit](https://reddit.com/), for the collection and rating of Cat Images. CatImgDB is made with `LAMP`/`LEMP` (`Linux`,`Apache` or `NGINX`,`MySQL` (specifically `mariadb`,`PHP`) and unreleased.
 
 ## Why are you making this?
 - To learn  
@@ -13,17 +13,25 @@ I've been wanting to learn `SQL` and `PHP` and making one big project is how I l
 This is the code for a yet to be released website (due to security issues). This allows the collection and rating of images.
 
 ## Installation requirements:
+You will need a web server, PHP, MySQL compatible Database Management System.
+
+### Installation Recommendation:
 - Web server
-	- Tested on `Apache` `v2.4.46` web server
+	`Apache` or `nginx`
+	- Tested on `Apache` `2.4.46-3` web server
+	- Tested on `nginx` `1.14.2` web server
 - PHP
+	`PHP` version `7.3.27` or higher
 	- Tested on `PHP` `v7.4.10`
 - MySQL compatible DBMS
+	`MariaDB`
 	- Tested on `MariaDB` `v10.5.5`
-- SQL manager
-	- Tested on phpMyAdmin
 - Operating System
+	`Debian` based `GNU + Linux` distro
 	- Tested on `Manjaro Linux x86_64`
-		- Kernel `GNU/Linux 5.8.11-1-MANJARO`
+		- Kernel `GNU/Linux 5.9.16-1-MANJARO`
+	- Tested on `Raspbian GNU/Linux 10 (buster) armv6`
+		- Kernel `5.4.51+`
 
 ## How to install
 1. login to your `SQL Manager` and add a new user
