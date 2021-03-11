@@ -1,6 +1,6 @@
 # CatImgDB
 This is the source code repo for CatImgDB.  
-CatImgDB is a image collection and rating website, similar to [Reddit](https://reddit.com/), for the collection and rating of Cat Images. CatImgDB is made with `LAMP`/`LEMP` (`Linux`,`Apache` or `NGINX`,`MySQL` (specifically `mariadb`,`PHP`) and unreleased.
+CatImgDB is a image collection and rating website, similar to [Reddit](https://reddit.com/), for the collection and rating of Cat Images. CatImgDB is made with `LAMP`/`LEMP` (`Linux`,`Apache` or `NGINX`,`MySQL` (specifically `mariadb`),`PHP`) and unreleased.
 
 ## Why are you making this?
 - To learn  
