@@ -1,4 +1,9 @@
 <?php
-$username = "viewer";
-$password = "<put password here>";
+try {
+  $username = "viewer";
+  $password = "<put password here>";
+}
+catch (exception $e) {
+  echo "An Error happened?";
+}
 ?>
