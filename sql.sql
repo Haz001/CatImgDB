@@ -1,3 +1,5 @@
+CREATE DATABASE imgdb;
+USE imgdb;
 CREATE TABLE catimg( /*this makes the table that stores the images*/
 	uid CHAR(16) NOT NULL PRIMARY KEY, /*made with PHP `uniqid("cat")`, don't change length*/
     url VARCHAR(2000) NOT NULL, /*URL of image*/
