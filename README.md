@@ -66,7 +66,7 @@ $dbname = "[database]";
 Technically yes, we have not yet added are [CatID AI](#catid) yet so there is nothing stopping this code being used to build another image site.  
 Officially **NO**. CatImgDB is only for cat images, it is in the title.
 - Where can i access this site?  
-Nowhere, unsettlingly this site is not yet public.
+Nowhere, upsettlingly this site is not yet public.
 - Why is this site not public yet? When will it be?  
 This site is not ready for public, this is due to security and quality issues.  
 We have no time frame for when it will be public.
