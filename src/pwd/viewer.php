@@ -1,4 +1,6 @@
 <?php
+$username = "";
+$password = "";
 try {
   $username = "viewer";
   $password = "<put password here>";
